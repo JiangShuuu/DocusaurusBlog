@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+tags: [hello, greetings, docusaurus]
 ---
 
 # Create a Blog Post
@@ -23,7 +24,7 @@ authors:
     title: Docusaurus maintainer
     url: https://sebastienlorber.com
     image_url: https://github.com/slorber.png
-tags: [greetings]
+tags: [hello, greetings, docusaurus]
 ---
 
 Congratulations, you have made your first post!
