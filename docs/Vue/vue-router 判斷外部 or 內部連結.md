@@ -1,7 +1,11 @@
 ---
 sidebar_position: 1
+last_update:
+  date: 2022/07/24
+  author: JohnShuuu
 tags: [vue2, vue-router, Nuxt2]
 ---
+
 
 # vue-router 判斷外部 or 內部連結
 
