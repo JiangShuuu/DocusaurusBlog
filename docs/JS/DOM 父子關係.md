@@ -162,7 +162,7 @@ displayPlayerList(players);
   </table>
 </div>
 ```
-### 2.按增加減少扭，可以操作數字
+### 2.按增加減少鈕，可以操作數字
 
 ![localeDropdown](./img/DOMP01.gif)
 
