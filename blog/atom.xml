@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JiangShuuu.github.io/DocusaurusBlog/blog"/>
     <subtitle>My Sites Blog</subtitle>
-    <icon>https://JiangShuuu.github.io/DocusaurusBlog/img/favicon.ico</icon>
+    <icon>https://JiangShuuu.github.io/DocusaurusBlog/img/trees.png</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
