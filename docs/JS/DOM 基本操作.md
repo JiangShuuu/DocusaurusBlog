@@ -4,6 +4,9 @@ last_update:
   date: 2022/07/25
   author: JohnShuuu
 tags: [JS, DOM]
+title: 【基礎】DOM 基本操作
+description: DOM 全名(Document Object Model)，為JS用來操作HTML物件的必備功能。
+image: ./img/DOMP.jpeg
 ---
 
 
