@@ -7,7 +7,7 @@ tags: [vue2, vue-router, Nuxt2]
 ---
 
 
-# vue-router 判斷外部 or 內部連結
+# 【狀況】判斷外部 or 內部連結
 
 很多時後我們用router-link來完成頁面的跳轉, 當要跳到外部網站時使用a標籤。
 
