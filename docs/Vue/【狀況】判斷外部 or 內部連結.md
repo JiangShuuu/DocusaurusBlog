@@ -4,10 +4,10 @@ last_update:
   date: 2022/07/24
   author: JohnShuuu
 tags: [vue2, vue-router, Nuxt2]
+description: 很多時後我們用router-link來完成頁面的跳轉, 當要跳到外部網站時使用a標籤。
 ---
-
-
 # 【狀況】判斷外部 or 內部連結
+`環境為Nuxt2`
 
 很多時後我們用router-link來完成頁面的跳轉, 當要跳到外部網站時使用a標籤。
 
@@ -18,7 +18,7 @@ tags: [vue2, vue-router, Nuxt2]
 但如果每頁都有這情況 v-if 看上去就會顯得比較雜亂，這時做成組件或許是個更好的選擇。
 
 ## 實作
-`以下情境為Nuxt2 & Vue2`
+`以下環境為Nuxt2 & Vue2`
 ```md title="拆解過程"
 1. template 加入 a標籤 與 router-link
 2. props 一個開口傳入連結
