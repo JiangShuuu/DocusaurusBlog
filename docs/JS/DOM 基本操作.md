@@ -5,11 +5,9 @@ last_update:
   author: JohnShuuu
 tags: [JS, DOM]
 title: 【基礎】DOM 基本操作
-description: DOM 全名(Document Object Model)，為JS用來操作HTML物件的必備功能。
+description: HTML DOM 文件物件模型，為JS用來操作HTML物件的必備功能。
 image: ./img/DOMP.jpeg
 ---
-
-
 # DOM 基本操作
 
 DOM 全名(Document Object Model)，為JS用來操作HTML物件的必備功能。

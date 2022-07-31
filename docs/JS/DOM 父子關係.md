@@ -5,6 +5,7 @@ last_update:
   author: JohnShuuu
 tags: [JS, DOM]
 title: 【基礎】DOM 父子關係
+description: HTML DOM 文件物件模型，為JS用來操作HTML物件的必備功能。
 ---
 
 # DOM 父子關係
