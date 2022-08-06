@@ -51,11 +51,11 @@ server {
  
   server_name test.newtest.com;
 
-	root  /home/new_file/xxx/dist;
+  root  /home/new_file/xxx/dist;
 
   index index.html;
-
-	gzip            on;
+  
+  gzip            on;
   gzip_types      text/plain application/xml text/css application/javascript;
   gzip_min_length 1000;
  
@@ -70,7 +70,7 @@ server {
 - root 指定讀取靜態檔位置
 - index 靜態檔名
 - gzip 壓縮檔案
-- location 指定位置
+- location try_file可以讓Nginx進行一系列的檔案或資料夾的查找，並可在最後放置一個URI讓Nginx進行內部重新導向。
 - return 301 轉址
 
 #### 3. 儲存後, 回到上一頁建立軟連結
