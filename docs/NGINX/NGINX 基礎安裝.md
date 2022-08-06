@@ -45,9 +45,9 @@ nginx -v
 
 ```md title="new-test.conf"
 server {
-  listen [::]:80;
-
   listen 80;
+
+  listen [::]:80;
  
   server_name test.newtest.com;
 
