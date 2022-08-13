@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 last_update:
-  date: 2022/08/07
+  date: 2022/08/14
   author: JohnShuuu
 tags: [Docker, Nginx, server]
 title: 【實作】Docker 製作網頁 image
@@ -213,7 +213,7 @@ docker build -t example1 .
 因為 Dockerfile 特性是只留最後一個 image 腳本, 所以執行到 Nginx image後 node image 就會被刪除,不會被 build成 docker image, 所以這邊的 image 只有 Nginx 的大小
 
 ### 接著參照node步驟5, 掛載 image 並啟動
-參考剛剛 node 的步驟完成 5 6 7 最後確認執行畫面
+參考剛剛 node 的 5 6 7步驟, 最後確認執行畫面
 
 ## Server name
 
