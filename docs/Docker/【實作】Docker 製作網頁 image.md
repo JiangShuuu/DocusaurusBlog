@@ -42,7 +42,7 @@ CMD [ "yarn", "dev" ]
 - WORKDIR 指定路徑
 - COPY 本地 DOCKER遠端
 - RUN 指令
-- EXPOSE 指定 post 位置
+- EXPOSE 指定 port 位置
 - CMD 執行指令
 ### 2. 建立 .dockerignore
 
