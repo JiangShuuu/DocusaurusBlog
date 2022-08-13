@@ -154,7 +154,6 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 - WORKDIR 指定路徑
 - COPY 本地 DOCKER遠端
 - RUN 指令
-- EXPOSE 指定 post 位置
 - ENTRYPOINT 最後執行的指令
 
 :::tip 白話
@@ -170,7 +169,7 @@ nginx 階段： 抓 nginx image, 指定目錄為 /usr/share/nginx/html, COPY 剛
 
 由於Dockerfile內只會存在最後一個FROM Image, 所以使用/COPY --from=0 來複製 build 好的檔案到 .根目錄
 
-—from=名稱  可以自訂, 0為預設, 名稱寫在第一個image的後面
+—from="名稱" 名稱可以自訂, 0為預設, 名稱寫在第一個image的後面, 範例：
 
 ```jsx title="Dockerfile"
 # 這行
@@ -217,7 +216,7 @@ docker build -t example1 .
 
 ## Server name
 
-剛剛在 Nginx 有設定 server_name, 但在docker容器啟動後, 輸入server_name 卻沒辦法到靜態檔位置, 這是因為本地的 hosts 並沒有指向
+剛剛在 Nginx 有設定 server_name, 但在docker容器啟動後, 輸入server_name 卻沒辦法顯示網站, 這是因為本地的 hosts 並沒有指向
 
 ### 開啟 terminal
 
