@@ -52,7 +52,7 @@ node_modules
 ```
 作用如同 gitignore 防止 docker 吃到本地環境的 node_modules 跟 dist
 
-:::tip
+:::caution
 
 EXPOST 位置要跟 yarn dev 開啟時的位置一樣才能執行,
 以vite舉例, 從 vite 3.0 開始, 官方預設 port為 4173
