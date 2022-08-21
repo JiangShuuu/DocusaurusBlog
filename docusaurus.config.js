@@ -60,6 +60,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{ name: 'google-site-verification', content: 'lrFURvQFLzrQRI4FW0Tb9PpGZSsILZPje39tCCNQb2Q' }],
       navbar: {
         title: 'JohnShu Blog',
         logo: {
