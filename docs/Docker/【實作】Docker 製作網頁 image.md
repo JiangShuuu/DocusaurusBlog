@@ -162,39 +162,51 @@ node 階段：先抓 node image, 在根目錄/app 將專案內的所有檔案 CO
 nginx 階段： 抓 nginx image, 指定目錄為 /usr/share/nginx/html, COPY 剛剛 build 好的所有檔案, 再 COPY 專案內的 nginx docker.conf 到 /etc/nginx 名稱為 nginx.conf
 :::
 
-:::tip —from=0 意思
-```
-/COPY --from=0 /app/dist .
-```
-
-由於Dockerfile內只會存在最後一個FROM Image, 所以使用/COPY --from=0 來複製 build 好的檔案到 .根目錄
-
-—from="名稱" 名稱可以自訂, 0為預設, 名稱寫在第一個image的後面, 範例：
-
-```jsx title="Dockerfile"
-# 這行
-FROM node:lts AS builder  
-
-WORKDIR /app
-
-COPY . .
-
-RUN yarn install
-
-RUN yarn build
-
-FROM nginx:alpine
-
-WORKDIR /usr/share/nginx/html
-
-# 這行
-COPY --from=builder /app/dist . 
-
-COPY ./nginx/docker.conf /etc/nginx/nginx.conf
-
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
-```
-:::
+<details>
+  <summary>—from=0 意思</summary>
+  <div>
+    <pre>
+      /COPY --from=0 /app/dist
+    </pre>
+    <p>由於Dockerfile內最後只會存在一個FROM Image, 所以使用/COPY --from=0 來複製 build 好的檔案到 .根目錄</p>
+    <p>—from="名稱" 名稱可以自訂, 0為預設, 名稱寫在第一個image的後面, 範例：</p>
+    <code>
+      <title>Dockerfile</title>
+      # 這行
+      <br/>
+      FROM node:lts AS builder
+      <br/>
+      <br/>
+      WORKDIR /app
+      <br/>
+      <br/>
+      COPY . .
+      <br/>
+      <br/>
+      RUN yarn install
+      <br/>
+      <br/>
+      RUN yarn build
+      <br/>
+      <br/>
+      FROM nginx:alpine
+      <br/>
+      <br/>
+      WORKDIR /usr/share/nginx/html
+      <br/>
+      <br/>
+      # 這行
+      <br/>
+      COPY --from=builder /app/dist .
+      <br/>
+      <br/>
+      COPY ./nginx/docker.conf /etc/nginx/nginx.conf
+      <br/>
+      <br/>
+      ENTRYPOINT ["nginx", "-g", "daemon off;"]
+    </code>
+  </div>
+</details>
 ---
 
 ### 執行 Dockerfile 腳本

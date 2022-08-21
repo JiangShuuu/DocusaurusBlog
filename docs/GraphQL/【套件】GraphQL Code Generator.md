@@ -8,7 +8,6 @@ title: 【套件】GraphQL Code Generator
 description: 使用 GraphQL Code Generator 自動編譯 TypeScript 所需的 type
 ---
 # 【套件】GraphQL Code Generator
-
 ## 前言
 
 GraphQL 在前端使用 TypeScript 撰寫時必須手動撰寫 Type，雖然 GraphQL 有 schema 可以作為參考，但每條 API 要在開發時撰寫 Type 就有點太沒效率以及有失誤的可能性。~~( 當然，用 any 就可以解決這個問題 ）~~
