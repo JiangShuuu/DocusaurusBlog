@@ -7,7 +7,7 @@ tags: [GraphQL, API, 套件]
 title: 【套件】GraphQL Code Generator
 description: 使用 GraphQL Code Generator 自動編譯 TypeScript 所需的 type
 ---
-# 【實作】Docker 製作網頁 image
+# 【套件】GraphQL Code Generator
 
 ## 前言
 
