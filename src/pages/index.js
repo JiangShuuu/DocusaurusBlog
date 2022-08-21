@@ -32,6 +32,7 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
+      <meta name="google-site-verification" content="lrFURvQFLzrQRI4FW0Tb9PpGZSsILZPje39tCCNQb2Q" />
       <HomepageHeader />
       <main>
         <HomepageFeatures />
