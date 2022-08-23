@@ -1,4 +1,5 @@
 ---
+id: nginx-base
 sidebar_position: 1
 last_update:
   date: 2022/08/07

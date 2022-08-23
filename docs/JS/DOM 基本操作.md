@@ -1,4 +1,5 @@
 ---
+id: js-dom-base
 sidebar_position: 1
 last_update:
   date: 2022/07/25
