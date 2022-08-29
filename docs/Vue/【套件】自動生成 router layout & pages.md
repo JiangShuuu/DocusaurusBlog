@@ -337,3 +337,5 @@ export default router
 
 ### 部署範例
 https://jiangshuuu.github.io/vue3-test-website/
+### github repo
+https://github.com/JiangShuuu/vue3-test-website/
