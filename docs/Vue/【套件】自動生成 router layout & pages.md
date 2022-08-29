@@ -334,3 +334,6 @@ router.beforeEach(async (to, from, next) => {
 
 export default router
 ```
+
+### 部署範例
+https://jiangshuuu.github.io/vue3-test-website/
