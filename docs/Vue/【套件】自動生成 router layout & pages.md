@@ -161,10 +161,10 @@ export default {
 
 ### 404頁面
 
-使用此套件, 404頁面只需要開個檔案名稱為 […all].vue 即可
+使用此套件, 404頁面只需要開個資料夾名稱為 […all] 並開個 index.vue 即可
 
 ```jsx
-// src/pages/[...all].vue
+// src/pages/[...all]/index.vue
 
 ```
 
@@ -305,3 +305,32 @@ meta:
 ![localeDropdown](./image/03/1.jpg)
 
 如此就能用這個值來達成會員頁以及訪客頁面的切換
+
+## Deploy 部署
+
+[https://vitejs.dev/guide/static-deploy.html#building-the-app](https://vitejs.dev/guide/static-deploy.html#building-the-app)
+
+以git-page為例, 除了參考 vite 官方設定 base 位置以及sh檔案以外
+
+需要額外到router檔案設定好位置, 才能正常執行,
+
+若為 GCP 或 AWS 這類雲端空間則無需修改.
+
+```jsx
+// router/index.ts
+import { createRouter, createWebHistory } from 'vue-router'
+import { setupLayouts } from 'virtual:generated-layouts'
+import generatedRoutes from 'virtual:generated-pages'
+
+const router = createRouter({
+  history: createWebHistory('vue3-test-website'),  // 修改這裏
+  routes: setupLayouts(generatedRoutes)
+})
+
+router.beforeEach(async (to, from, next) => {
+  console.log(to.meta)
+  next()
+})
+
+export default router
+```
