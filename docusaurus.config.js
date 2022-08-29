@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'JohnShu Blog',
   tagline: 'Blog & Note & Project',
-  url: 'https://JiangShuuu.github.io',
-  baseUrl: '/DocusaurusBlog/',
+  url: 'https://JiangShuuu.github.io/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/trees.png',
