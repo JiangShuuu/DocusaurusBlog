@@ -93,22 +93,26 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Line',
+                href: 'https://line.me/ti/p/rfmSgv4N6p',
+              },
+              {
+                label: 'Instagram',
+                href: 'https://www.instagram.com/jiangshu___/',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://discordapp.com/users/434754124974653451',
               },
             ],
           },
@@ -116,13 +120,19 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'GitHub',
+                href: 'https://github.com/JiangShuuu',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                html: `
+                  <a href="mailto:globelex65@gmail.com"><u>My Gmail</u></a>
+                `,
               },
+              {
+                html: `
+                  <p>Connect: 0912-697-801</p>
+                `,
+              }
             ],
           },
         ],
