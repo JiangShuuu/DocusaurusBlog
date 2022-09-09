@@ -9,25 +9,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 # git 克隆到当前机器上
+      - uses: actions/checkout@v3 # git clone
+
       - name: Use Node.js
-        uses: actions/setup-node@v3 # 设置node环境
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.14.2 # 指定版本
+          node-version: 16.14.2
 
       - name: Install dependencies
         run: npm install
 
       - name: Run build
-        run: npm run build # 运行 yarn build
+        run: npm run build
 
-      - uses: appleboy/scp-action@master # 使用scp-action进行文件上传
+      - uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: 'build' # 需要上传的文件
-          target: '~/demo' # 上传到服务器的什么位置
+          source: 'build'
+          target: '~/demo'
 
       - name: Run Deploy
         uses: appleboy/ssh-action@master
@@ -36,6 +37,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: | # 运行多行命令
+          script: |
             sudo rm -rf /var/www/jiangshuuu.com/blog
             sudo cp -R /home/ubuntu/demo/build /var/www/jiangshuuu.com/blog
