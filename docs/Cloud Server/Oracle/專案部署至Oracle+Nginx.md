@@ -17,7 +17,7 @@ description: 此篇紀錄如何將專案放置 Oracle 雲端, 並且設置 Nginx
 
 - Oracle 主機
 
-未有 Oracle 帳號可以看這個影片跟著申請
+若沒有 Oracle 帳號可以看這個影片跟著申請
 
 [https://www.youtube.com/watch?v=5a5tdJh8mKY](https://www.youtube.com/watch?v=5a5tdJh8mKY)
 
