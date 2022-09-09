@@ -29,7 +29,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
           script: |
-            cd blog
-            npm run build
-            sudo rm -rf /var/www/jiangshuuu.com/blog
-            sudo cp -R /home/ubuntu/blog/build /var/www/jiangshuuu.com/blog
+            whoami >> d.txt
+            ls -la >> d.txt
