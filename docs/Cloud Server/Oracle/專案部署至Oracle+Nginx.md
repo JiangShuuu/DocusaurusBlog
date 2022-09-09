@@ -1,5 +1,5 @@
 ---
-id: nginx-base
+id: oracle-nginx-upload-project
 sidebar_position: 1
 last_update:
   date: 2022/09/10

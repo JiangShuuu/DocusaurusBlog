@@ -29,5 +29,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
           script: |
-            whoami >> d.txt
-            ls -la >> d.txt
+            mkdir foo
+            cd foo
+            touch t.txt
