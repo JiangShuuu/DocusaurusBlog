@@ -217,7 +217,9 @@ sudo unlink /etc/nginx/sites-enabled/default
 - SSL簽證
 - 網域
 
-這邊推薦使用 cloudflare, 購買網域後可以再上面申請 ssl, cloudflare會自動幫你續簽
+這邊推薦使用 cloudflare, 購買網域後可以再上面申請 ssl, cloudflare會自動幫你續簽, 申請方法可參考另一篇文章
+
+點我**[【實作】Cloudflare 申請網域及SSL憑證](https://www.jiangshuuu.com/docs/CloudServer/cloudflare-apply-ssl)** 
 
 ### 更改 test.conf
 
