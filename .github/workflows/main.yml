@@ -16,6 +16,7 @@ jobs:
           node-version: 16.14.2 # 指定版本
 
       - name: Run build
+        run: npm install
         run: npm run build # 运行 yarn build
 
       - uses: appleboy/scp-action@master # 使用scp-action进行文件上传
@@ -23,7 +24,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: '.' # 需要上传的文件
+          source: 'build' # 需要上传的文件
           target: '~/demo' # 上传到服务器的什么位置
 
       - name: Run Deploy
