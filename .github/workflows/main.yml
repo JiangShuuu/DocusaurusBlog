@@ -14,7 +14,6 @@ jobs:
         uses: actions/setup-node@v3 # 设置node环境
         with:
           node-version: 16.14.2 # 指定版本
-          cache: 'npm'
 
       - name: Run build
         run: npm run build # 运行 yarn build
