@@ -29,6 +29,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
           script: |
-            mkdir foo
-            cd foo
-            touch t.txt
+            cd blog
+            git pull
+            npm run build
+            sudo rm -rf /var/www/jiangshuuu.com/blog
+            sudo cp -R /home/ubuntu/blog/build /var/www/jiangshuuu.com/blog
