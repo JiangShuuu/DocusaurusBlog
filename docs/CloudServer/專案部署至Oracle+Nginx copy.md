@@ -4,7 +4,7 @@ sidebar_position: 1
 last_update:
   date: 2022/09/10
   author: JohnShuuu
-tags: [NGINX, ubuntu, Oracle, server]
+tags: [Nginx, ubuntu, Oracle, server, deploy]
 title: 【實作】專案部署至 Oracle Server
 description: 此篇紀錄如何將專案放置 Oracle 雲端, 並且設置 Nginx , 讓專案可以在網站上被搜到
 ---

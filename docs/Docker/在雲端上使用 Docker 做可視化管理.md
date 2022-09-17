@@ -4,7 +4,7 @@ sidebar_position: 2
 last_update:
   date: 2022/09/18
   author: JohnShuuu
-tags: [Docker, Nginx, server]
+tags: [Docker, Nginx, server, portainer, ubuntu]
 title: 【實作】在雲端上使用 Docker 做可視化管理
 description: 此篇紀錄使用 Nginx Proxy Manager 做反向代理以及使用 Portainer 圖象化工具做 Docker 的容器管理
 ---
@@ -17,9 +17,10 @@ description: 此篇紀錄使用 Nginx Proxy Manager 做反向代理以及使用 
 
 不過此篇聚焦在雲端主機創好後需要的基礎建設, 專案的打包在之後介紹
 
+## 前置作業
 1. 乾淨的主機，需要 1G 以上的 RAM (不然裝一個專案就爆了)  
 參考主機申請教學 **[【實作】專案部署至 Oracle Server](https://www.jiangshuuu.com/docs/CloudServer/oracle-nginx-upload-project/)**
-2. 能夠 ssh 連進主機
+2. 基礎 linux 指令知識, 能連進伺服器, 修改檔案
 3. cloudflare SSL 簽證  
 參考SSL申請教學 **[【實作】Cloudflare 申請網域及SSL憑證](https://www.jiangshuuu.com/docs/CloudServer/cloudflare-apply-ssl/)**
 
