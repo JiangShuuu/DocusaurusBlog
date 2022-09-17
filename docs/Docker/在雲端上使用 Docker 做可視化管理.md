@@ -2,7 +2,7 @@
 id: docker-nginx-manager-portainer
 sidebar_position: 2
 last_update:
-  date: 2022/09/18
+  date: 2022/09/17
   author: JohnShuuu
 tags: [Docker, Nginx, server, portainer, ubuntu]
 title: 【實作】在雲端上使用 Docker 做可視化管理
