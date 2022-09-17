@@ -142,6 +142,21 @@ docker run --name mysql_server -p 3308:3306 \
 
 - -e 後面為 mysql 的環境變數, 可自訂
 
+### 確認專案的 config 檔案
+確認專案中的 config 檔案, 資料庫設定參數跟上方 mysql_server 一樣
+ex.
+```jsx 
+// ...
+    ,
+    "production": {
+    "username": "test",
+    "password": "password",
+    "database": "my_db",
+    "host": "mysql_server",
+    "dialect": "mysql"
+  },
+// ...
+``` 
 ### 建立 Dockerfile
 
 ```jsx title="路徑 ./Dockerfile"
