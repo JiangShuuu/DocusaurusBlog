@@ -67,15 +67,13 @@ sudo systemctl enable docker
 
 - 連進雲端後, 執行以下步驟
 
-[https://nginxproxymanager.com/setup/#using-mysql-mariadb-database](https://nginxproxymanager.com/setup/#using-mysql-mariadb-database)
-
-1. 複製官方文檔內的 docker-compose.yml
+1. 複製 **[官方文檔](https://nginxproxymanager.com/setup/#using-mysql-mariadb-database)** 內的 docker-compose.yml
 
 ![localeDropdown](./image/02/01.jpg)
 
 2. 建立檔案路徑 /home/ubuntu/docker/data/npm/docker-compose.yml 放在 docker/data 方便管理 docker 檔案
 3. 執行 docker-compose up -d
-4. 輸入主機ip: [xxx.xxx.xxx.xxx](http://xxx.xxx.xxx.xxx):81 確認連線畫面  
+4. 輸入主機ip: xxx.xxx.xxx.xxx:81 確認連線畫面  
 (若沒辦法連進81 port, 請確認主機端的防火牆有沒有把 80、443、81 port打開)
 
 ![localeDropdown](./image/02/02.jpg)
@@ -116,13 +114,11 @@ Password: changeme
 
 ## Portainer
 
-[https://docs.portainer.io/start/install/server/docker/linux](https://docs.portainer.io/start/install/server/docker/linux)
-
 Portainer 為 Docker 的圖像化管理工具, 在上面可以直接創建容器, 下載映像檔, 選擇想使用的 templates, 設定 networks ….等 Docker 功能
 
 ### 安裝
 
-1. 參考官方文件安裝方法
+1. 參考 [官方文件](https://docs.portainer.io/start/install/server/docker/linux) 安裝方法
     
 ![localeDropdown](./image/02/08.jpg) 
 
