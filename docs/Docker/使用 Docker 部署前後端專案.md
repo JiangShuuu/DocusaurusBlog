@@ -6,14 +6,12 @@ last_update:
   author: JohnShuuu
 tags: [Docker, FrontEnd, BackEnd, deploy]
 title: 【實作】使用 Docker 部署前後端專案
-description: 此篇紀錄使用 Docker 做前後端專案的部署流程，以及需要注意的狀況
+description: 此篇紀錄使用 Docker 做前後端專案的部署流程以及需要注意的狀況
 ---
 # 【實作】使用 Docker 部署前後端專案
 `環境 Oracle + ubuntu 22.04`
 
-在建立好雲端後，想把專案往雲上丟時，常常會遇到需要裝各種不同版本的 node 環境來做設定
-
-這時把專案全部包成 Docker image 使用 Docker 容器統一管理就不需要另外在雲端主機安裝 node 或是 python 等等執行專案需要的環境
+在主機安裝好 Docker 以及必要工具後，接下來要把前後端專案透過 Docker 做雲端部署
 
 以下為基礎的建立專案 image 以及丟上雲端的範例
 

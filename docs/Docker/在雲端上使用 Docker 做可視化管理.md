@@ -4,18 +4,20 @@ sidebar_position: 2
 last_update:
   date: 2022/09/17
   author: JohnShuuu
-tags: [Docker, Nginx, server, portainer, ubuntu]
+tags: [Docker, Nginx, server, Portainer, ubuntu]
 title: 【實作】在雲端上使用 Docker 做可視化管理
 description: 此篇紀錄使用 Nginx Proxy Manager 做反向代理以及使用 Portainer 圖象化工具做 Docker 的容器管理
 ---
 # 【實作】在雲端上使用 Docker 做可視化管理
 `環境 Oracle + ubuntu 22.04`
 
-在建立好雲端後，想把專案往雲上丟時，常常會遇到需要裝各種不同版本的 node 環境來做設定。
+在創好雲端後，會因為專案的不同，必須安裝不同的環境，有時候還需要像 nvm 這類工具來做環境的切換
 
-這時把專案全部包成 Docker image 使用 Docker 容器統一管理就不需要另外在雲端主機安裝 node 或是 python 等等執行專案需要的環境
+而 Docker 就是把各類型的專案根據各種不同的環境需求都包成 image 來執行，
 
-不過此篇聚焦在雲端主機創好後需要的基礎建設, 專案的打包在之後介紹
+這樣一來，即使換了台主機，只需要灌 Docker 就能符合所有專案的執行環境。
+
+以下介紹兩個 Docker 好用的可視化介面工具。
 
 ## 前置作業
 1. 乾淨的主機，需要 1G 以上的 RAM (不然裝一個專案就爆了)  
