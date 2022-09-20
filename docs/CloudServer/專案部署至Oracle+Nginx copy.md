@@ -75,6 +75,11 @@ nginx.service - A high performance web server and a reverse proxy server
 sudo firewall-cmd --permanent --zone=public --add-service=http 
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
+
+// 開port
+sudo firewall-cmd --permanent --zone=public --add-port=3000/tcp
+// 查目前開放清單
+sudo firewall-cmd --zone=public --list-all
 ```
 
 這邊在輸入第一行時, 會顯示系統找不到 firewall
