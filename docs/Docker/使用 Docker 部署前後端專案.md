@@ -237,3 +237,37 @@ Nginx Proxy Manager 簡介設定參考 **[【實作】在雲端上使用 Docker 
 瀏覽器輸入剛剛設定的 domain name 就能開啟後端專案
 
 ex. [https://express.jiangshuuu.com/](https://express.jiangshuuu.com/)
+
+## 遠端連接 Docker MySQL
+
+由於 MySQL8.0 用 root 遠端登入比較麻煩, 所以選擇新建一個 MySQL 用戶 
+
+### 進入容器
+```
+sudo docker exec -it [容器id或name] bash
+```
+
+### 指令操作
+```jsx
+// 登入MySQL
+// 密碼為當初創建mySQL時設定的密碼
+mysql -uroot -p
+
+// 新建用戶
+// 新用戶名稱為 john ; 密碼為 johnnhoj
+create user 'john' identified with mysql_native_password by 'johnnhoj';
+
+// 為新用戶MySQL開啟權限
+grant all privileges on *.* to 'john';
+
+// 刷新權限
+flush privileges;
+
+// 退出 docker 容器
+control +  p  + q
+```
+
+### 測試
+![localeDropdown](./image/03/06.jpg)  
+- Hostname 為遠端主機IP
+- Port 為Docker容器對外Port
