@@ -268,6 +268,8 @@ control +  p  + q
 ```
 
 ### 測試
+本地開啟 MySQLWorkbench 設定連線
+
 ![localeDropdown](./image/03/06.jpg)  
 - Hostname 為遠端主機IP
 - Port 為Docker容器對外Port
