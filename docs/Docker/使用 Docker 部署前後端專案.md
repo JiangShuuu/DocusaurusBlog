@@ -110,7 +110,7 @@ Portainer 簡介設定參考 **[【實作】在雲端上使用 Docker 做可視�
 - docker ps 確認
 ![localeDropdown](./image/03/02.jpg)
 
-- painter 確認
+- portainer 確認
 ![localeDropdown](./image/03/03.jpg)  
 
 ### Nginx Proxy Manager 設定 proxy
@@ -205,7 +205,7 @@ docker run --name clothesBackEnd -p 8888:8888 \
 - docker ps  確認
 ![localeDropdown](./image/03/04.jpg)
 
-- painter 確認
+- portainer 確認
 ![localeDropdown](./image/03/05.jpg)  
 
 ### docker network connect
