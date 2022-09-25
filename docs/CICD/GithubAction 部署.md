@@ -237,10 +237,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo rm -rf /var/www/jiangshuuu.com/blog
-            sudo cp -R /home/ubuntu/build /var/www/jiangshuuu.com/blog
+            sudo rm -rf /var/www/xxx/xxx # 刪除舊的
+            sudo cp -R /home/ubuntu/build /var/www/xxx/xxx # 複製新的
 ```
-
 
 ## 檢查
 這邊設定推上 main 分支就會觸發 GithubAction, 可以到這邊檢查執行結果
