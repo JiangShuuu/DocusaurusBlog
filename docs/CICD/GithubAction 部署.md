@@ -211,15 +211,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # git clone 專案
 
-      - name: Use Node.js # Node
+      - name: Use Node.js Install & Run build # Node
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-
-      - name: Install & Run build # Node 腳本
-        run: |
-		  npm install
-		  npm run build
+      - run: npm install
+      - run: npm run build
 
       - uses: appleboy/scp-action@master # scp 複製檔案
         with:
