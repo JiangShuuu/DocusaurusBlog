@@ -10,7 +10,7 @@ description: 此篇紀錄使用 Github Action 做前後端專案的自動化部�
 ---
 # 【實作】GithubAction 自動化部署
 
-把雲端以及docker環境建立好之後, 接著要把GithubAction加上去,  
+把雲端以及docker環境建立好之後, 接著要在專案設定 GithubAction,  
 
 讓每次推上指定分支後, GithubAction 就能自動幫我們做好之後的整段部署。
 
@@ -19,6 +19,7 @@ description: 此篇紀錄使用 Github Action 做前後端專案的自動化部�
 - 雲端主機, 有Docker [(可參考連結)](https://jiangshuuu.com/docs/Docker/docker-nginx-manager-portainer/)
 - [DockerHub Access-Tokens 申請教學](https://docs.docker.com/docker-hub/access-tokens/)
 - SSH_PRIVATE_KEY
+- 環境變數設定 Github >> 專案 >> Settings >> Secrets >> Actions
 
 ### SSH_PRIVATE_KEY
 
