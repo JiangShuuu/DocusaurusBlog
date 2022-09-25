@@ -39,9 +39,7 @@ description: 此篇紀錄使用 Github Action 做前後端專案的自動化部�
 - push 上 dockerhub
 - SSH 進主機, 刪除舊的 container 以及 image, 重新掛載新的
 
-資料夾路徑 .github/workflows/main.yml
-
-```bash
+```bash title=資料夾路徑.github/workflows/main.yml
 name: Build and Deploy to Cloud Run
 
 on:
