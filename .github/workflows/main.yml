@@ -16,11 +16,10 @@ jobs:
         with:
           node-version: 16.14.2
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run build
-        run: npm run build
+      - name: Install & Run build
+        run: |
+					npm install
+					npm run build
 
       - uses: appleboy/scp-action@master
         with:
