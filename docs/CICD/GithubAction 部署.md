@@ -245,6 +245,115 @@ jobs:
             sudo cp -R /home/ubuntu/build /var/www/xxx/xxx # 複製新的
 ```
 
-## 檢查
+## Github 介面檢查
 這邊設定推上 main 分支就會觸發 GithubAction, 可以到這邊檢查執行結果
 ![localeDropdown](./image/01/01.jpg)
+
+## platforms 的時間差異
+
+不同的 platforms build的時間也會有落差, 以前端部署的例子來看
+- 預設的amd64
+![localeDropdown](./image/01/04.jpg)
+- 範例中的arm64
+![localeDropdown](./image/01/02.jpg)
+
+時間差了將近4分鐘，稍微查了一下似乎是因為arm為簡易指令集導致。
+
+### 優化 dockerfile
+
+目前把 build 的步驟教給了 Dockerfile 做, 導致不同架構 build 非常久,  
+並且由於是SPA專案, 需要預先裝的env, 變成需要先定義 build-args, 再讓 Dockerfile 吃 ARG, 相當繁瑣。  
+
+所以這邊直接把 build 這個步驟在本機完成, push 上去後 GithubAction 只負責 deploy 到雲端即可。
+
+<details>
+  <summary>原本的Dockerfile</summary>
+  <code>
+      <title>Dockerfile</title>
+      <br/>
+      FROM node:16-alpine
+      <br/>
+      <br/>
+      WORKDIR /app
+      <br/>
+      <br/>
+      COPY package.json .
+      <br/>
+      <br/>
+      RUN yarn install
+      <br/>
+      <br/>
+      COPY . .
+      <br/>
+      <br/>
+      ARG VITE_APIURL
+      <br/>
+      ARG VITE_FIREBASE_API_KEY
+      <br/>
+      ARG VITE_FIREBASE_AUTH_DOMAIN
+      <br/>
+      ARG VITE_FIREBASE_PROJECT_ID
+      <br/>
+      ARG VITE_FIREBASE_STORAGE_BUCKET
+      <br/>
+      ARG VITE_FIREBASE_MESSAGING_SENDER_ID
+      <br/>
+      ARG VITE_FIREBASE_APP_ID
+      <br/>
+      <br/>
+      ENV VITE_APIURL $VITE_APIURL
+      <br/>
+      ENV VITE_FIREBASE_API_KEY $VITE_FIREBASE_API_KEY
+      <br/>
+      ENV VITE_FIREBASE_AUTH_DOMAIN $VITE_FIREBASE_AUTH_DOMAIN
+      <br/>
+      ENV VITE_FIREBASE_PROJECT_ID $VITE_FIREBASE_PROJECT_ID
+      <br/>
+      ENV VITE_FIREBASE_STORAGE_BUCKET $VITE_FIREBASE_STORAGE_BUCKET
+      <br/>
+      ENV VITE_FIREBASE_MESSAGING_SENDER_ID $VITE_FIREBASE_MESSAGING_SENDER_ID
+      <br/>
+      ENV VITE_FIREBASE_APP_ID $VITE_FIREBASE_APP_ID
+      <br/>
+      <br/>
+      FROM nginx:alpine
+      <br/>
+      <br/>
+      WORKDIR /usr/share/nginx/html
+      <br/>
+      <br/>
+      COPY --from=0 /app/dist .
+      <br/>
+      <br/>
+      COPY ./nginx/docker.conf /etc/nginx/nginx.conf
+      <br/>
+      <br/>
+      ENTRYPOINT ["nginx", "-g", "daemon off;"]
+    </code>
+</details>
+
+```bash title=修改後的Dockerfile
+# nginx
+FROM nginx:alpine
+
+WORKDIR /usr/share/nginx/html
+
+# 複製build好的dist到nginx html路徑
+COPY ./dist .  
+
+COPY ./nginx/docker.conf /etc/nginx/nginx.conf
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+```
+
+### 部署步驟
+
+修改好 Dockerfile 後, 接著
+
+1. 移除 github/workflows/main.yml中 "- name: Build and push" 步驟
+2. 本機 build 成靜態檔
+3. 推上 git 執行 GithubAction 看結果
+
+![localeDropdown](./image/01/03.jpg)
+
+成功從將近6分鐘的耗時, 縮短到40秒左右！
