@@ -259,7 +259,10 @@ jobs:
 
 時間差了將近4分鐘，稍微查了一下似乎是因為arm為簡易指令集導致。
 
-### 優化 dockerfile
+要縮短這麼久的時間有以下幾個方法。
+
+### 本機 build
+#### 優化 dockerfile
 
 目前把 build 的步驟教給了 Dockerfile 做, 導致不同架構 build 非常久,  
 並且由於是SPA專案, 需要預先裝的env, 變成需要先定義 build-args, 再讓 Dockerfile 吃 ARG, 相當繁瑣。  
@@ -346,7 +349,7 @@ COPY ./nginx/docker.conf /etc/nginx/nginx.conf
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
-### 部署步驟
+#### 部署步驟
 
 修改好 Dockerfile 後, 接著
 
@@ -357,3 +360,90 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ![localeDropdown](./image/01/03.jpg)
 
 成功從將近6分鐘的耗時, 縮短到40秒左右！
+
+### GithubAction 修改
+
+方法一確實解決了時間過長的問題, 但每次推上Github前, 需要先把專案給 build 好, 似乎有點違反CD的概念。
+
+既然方法一把 build 的步驟給本地做了, 那方法二就把 build 的步驟放在 GitAction 進到 Dockerfile 之前。  
+要做到這個概念前需要做到
+
+1. Dockerfile 沿用方法一，只留 nginx 即可。
+
+2. 建立 env 檔案  
+由於 env 通常不會上傳至 GitHub, 所以要在 Action 內建立 env 並且把值傳進去
+
+3. 在 Action 內建立 node 步驟去 build 專案  
+
+```bash title="修改後的 GithubAction"
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+    - main
+
+
+jobs:   
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # git clone 專案
+
+      - name: create env file
+        run: |
+          touch .env
+          echo VITE_APIURL=${{ secrets.VITE_APIURL }} >> .env
+          echo VITE_URL=${{ secrets.VITE_URL }} >> .env
+          echo VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }} >> .env
+          echo VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }} >> .env
+          echo VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }} >> .env
+          echo VITE_FIREBASE_STORAGE_BUCKET=${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }} >> .env
+          echo VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }} >> .env
+          echo VITE_FIREBASE_APP_ID=${{ secrets.VITE_FIREBASE_APP_ID }} >> .env
+
+      - name: Use Node.js Install & Run build # Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.2
+      - run: npm install
+      - run: npm run build
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          platforms: linux/arm64
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clothes:latest
+
+      - name: Run Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          command_timeout: 4m
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            ${{secrets.DOCKER_SCRIPT}}
+```
+
+#### 結果
+
+![localeDropdown](./image/01/05.jpg)
+
+縮短至 1 分鐘左右，雖然只跟 amd64 差不多，但少了在本地 build 的步驟。 
+
+以上的方法就看遇到的情況搭配著用。
