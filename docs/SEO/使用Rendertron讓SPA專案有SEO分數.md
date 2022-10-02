@@ -75,8 +75,7 @@ pm2 delete [name]
 
 ```bash
 server {
-    ....
-		......
+    .... 省略 ....
 
     location / {
       try_files $uri @prerender;
@@ -112,8 +111,8 @@ server {
 ```
 
 - $scheme 為 http / https
-- $host 為 網域/主機位置
-- $request_uri 為 網域/主機位置, “ / “後的內容(含” / “)
+- $host 為 專案的網域/主機位置
+- $request_uri 為 專案的網域/主機位置, “ / “後的內容(含” / “)
 
 ## 使用 Docker 掛載 rendertron
 
@@ -128,6 +127,9 @@ server {
 docker run --name rendertron -p [對外port]:3000 \
 --restart unless-stopped \
 -d ammobindotca/rendertron:latest
+
+## docker 檢查
+docker ps
 ```
 
 ### 修改專案 Nginx
@@ -151,3 +153,5 @@ curl https://profile.jiangshuuu.com/
 - 一般使用者
     
 ![localeDropdown](./image/01/02.jpg)
+
+- 題外話：rendertron 使用主機的好壞會影響架構回傳的速度, 也會影響SEO分數。
