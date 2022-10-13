@@ -58,9 +58,6 @@
   font-size: 17px;
   
 }
-a {
-  all:unset;
-}
 
 .desktop_btn_text:hover {
   background: #BCCCDC;
