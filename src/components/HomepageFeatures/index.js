@@ -41,7 +41,9 @@ function Feature({image, git, mobile, short_intro, link, title, description}) {
           {/* <Svg className={styles.featureSvg} role="img" /> */}
         </div>
         <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
+          <a href={git} target="_blank">
+            <h3>{title}</h3>
+          </a>
           <p>{short_intro}</p>
         </div>
       </section>
