@@ -8,10 +8,14 @@ const FeatureList = [
     image: './profile/01.png',
     mobile: './profile/02.png',
     link: 'https://profile.jiangshuuu.com/',
+    git: 'https://github.com/JiangShuuu/vue3-clothingStore-ts',
     short_intro: 'NodeJS / TypeScript(Vue3) / MySQL / Oracle',
     description: (
       <>
-        123
+        <li>Vue3 + TypeScript</li>
+        <li>TailwindCss(前台) + Element-Plus(後台) </li>
+        <li>Nodejs + express + MySQL</li>
+        <li>Oracle + Docker + GitHubAction</li>
       </>
     )
   },
@@ -26,7 +30,7 @@ const FeatureList = [
   // },
 ];
 
-function Feature({image, mobile, short_intro, link, title, description}) {
+function Feature({image, git, mobile, short_intro, link, title, description}) {
   return (
     <>
       <section className={styles.mobile}>
@@ -50,9 +54,12 @@ function Feature({image, mobile, short_intro, link, title, description}) {
             <img src={mobile} alt="" />
           </a>
         </div>
-        <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
-          <p>{description}</p>
+        <div className={styles.desktop_desc_box}>
+          <h3 className={styles.desktop_desc_title}>{title}</h3>
+          <div className={styles.desktop_desc}>{description}</div>
+          <div className={styles.desktop_btn}>
+            <a href={git} target="_blank" className={styles.desktop_btn_text}>More</a>
+          </div>
         </div>
       </section>
     </>
