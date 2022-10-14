@@ -86,7 +86,8 @@
 }
 .prev:hover,
 .next:hover {
-  background: #fffff;
+  background: #BCCCDC;
+  color: white;
 }
 .prev {
   left: 0;
