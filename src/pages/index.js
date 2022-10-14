@@ -15,11 +15,11 @@ function HomepageHeader() {
         <img src='/img/photo.jpeg' className={styles.person_img} />
         <p className={styles.title}>John Lu</p>
         <p className={styles.text}>技術分享, 持續學習, 筆記記錄, 全端開發</p>
-        <Link
+        {/* <Link
           className="button button--secondary button--lg"
           to="/cv">
           More Info
-        </Link>
+        </Link> */}
       </article>
     </header>
   );

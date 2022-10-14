@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const FeatureList = [
   {
@@ -63,6 +64,12 @@ function Feature({image, git, mobile, short_intro, link, title, description}) {
             <a href={git} target="_blank" className={styles.desktop_btn_text}>More</a>
           </div>
         </div>
+        <button className={styles.prev}>
+          <FaArrowLeft />
+        </button>
+        <button className={styles.next}>
+          <FaArrowRight />
+        </button>
       </section>
     </>
   );
