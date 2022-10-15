@@ -49,13 +49,13 @@ function Feature({image, git, mobile, short_intro, link, title, description}) {
   return (
     <>
       <section className={styles.mobile}>
-        <div className="text--center">
+        <div className={styles.mobile_image}>
           <a href={link} target="_blank">
             <img src={image} alt="" />
           </a>
           {/* <Svg className={styles.featureSvg} role="img" /> */}
         </div>
-        <div className="text--center padding-horiz--md">
+        <div className={styles.mobile_box}>
           <a href={git} target="_blank">
             <h3>{title}</h3>
           </a>
@@ -106,7 +106,7 @@ export default function HomepageFeatures() {
   // useEffect(() => {
   //   let slider = setInterval(() => {
   //     setIndex(index + 1);
-  //   }, 5000);
+  //   }, 3500);
   //   return () => {
   //     clearInterval(slider);
   //   };
@@ -130,6 +130,20 @@ export default function HomepageFeatures() {
 
             return (
               <article className={position} key={id}>
+                <section className={styles.mobile}>
+                  <div className={styles.mobile_image}>
+                    <a href={link} target="_blank">
+                      <img src={image} alt="" />
+                    </a>
+                    {/* <Svg className={styles.featureSvg} role="img" /> */}
+                  </div>
+                  <div className="text--center padding-horiz--md">
+                    <a href={git} target="_blank">
+                      <h3>{title}</h3>
+                    </a>
+                    <p>{short_intro}</p>
+                  </div>
+                </section>
                 <section className={styles.desktop}>
                   <div className={styles.desktop_image}>
                     <a href={link} target="_blank">

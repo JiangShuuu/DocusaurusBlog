@@ -42,7 +42,6 @@ article {
 }
 article.activeSlide {
   opacity: 1;
-  /* border: 1px solid; */
   transform: translateX(0);
 }
 article.lastSlide {
