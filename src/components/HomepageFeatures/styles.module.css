@@ -1,11 +1,135 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.mobile {
+  display: none;
+}
+
+.mobile_image {
+  display: flex;
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* desktop */
+
+.desktop {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+}
+.desktop_image {
+  display: flex;
+  width: 600px;
+  overflow: hidden;
+  margin: 0 0 0 3rem;
+}
+.desktop_image_02 {
+  padding-left: 1rem;
+}
+.desktop_desc {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: -1.5rem;
+}
+.desktop_desc_title {
+  text-align: center;
+  font-size: 23px;
+}
+.desktop_desc_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.desktop_btn {
+  all: unset;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+.desktop_btn_text {
+  all: unset;
+  text-align: center;
+  border: 1px solid;
+  width: 100%;
+  padding: 0.5rem 3rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 17px;
+}
+
+.desktop_btn_text:hover {
+  background: #BCCCDC;
+  color: white;
+  text-decoration: none;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  margin: 0 5rem;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffff;
+  border-color: transparent;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.prev:hover,
+.next:hover {
+  background: #BCCCDC;
+  color: white;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+@media screen and (max-width:997px) {
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .desktop {
+    display: none;
+  }
+  .features {
+    margin: 0;
+  }
+  .prev,
+  .next {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .desktop {
+    width: 100%;
+  }
+  .desktop_image {
+    margin: 0 ;
+  }
+  .prev,
+  .next {
+    display: none;
+  }
 }

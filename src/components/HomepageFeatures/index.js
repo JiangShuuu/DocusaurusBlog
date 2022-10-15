@@ -1,64 +1,188 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const FeatureList = [
+const data = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    id: 1,
+    title: '全端電商',
+    image: './profile/01/web.png',
+    mobile: './profile/01/mobile.png',
+    link: 'https://profile.jiangshuuu.com/',
+    git: 'https://github.com/JiangShuuu/vue3-clothingStore-ts',
+    short_intro: 'NodeJS / TypeScript(Vue3) / MySQL / Oracle',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <li>Vue3 + TypeScript + Restful API</li>
+        <li>TailwindCss(前台) + Element-Plus(後台) </li>
+        <li>Nodejs + express + MySQL</li>
+        <li>Oracle + Docker + GitHubAction</li>
+        <li>Rendertron for SEO</li>
       </>
-    ),
+    )
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    id: 2,
+    title: '旅遊查詢(前端)',
+    image: './profile/02/web.jpg',
+    mobile: './profile/02/mobile.jpg',
+    link: 'https://jiangshuuu.github.io/travel_website/',
+    git: 'https://github.com/JiangShuuu/travel_website',
+    short_intro: 'Vue2 / 交通部API / Scss',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <li>For The F2E 活動</li>
+        <li>Vue2 + 交通部API</li>
+        <li>Scss</li>
+        <li>Github Page</li>
       </>
-    ),
+    )
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    id: 3,
+    title: 'Twitter 前後協作專案',
+    image: './profile/03/DemoGif.gif',
+    // mobile: './profile/03/demo.jpg',
+    link: 'https://jiangshuuu.github.io/twitter_project/',
+    git: 'https://github.com/JiangShuuu/twitter_project',
+    short_intro: 'Vue2 / Restful API / Scss',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <li>Vue2 + Restful API</li>
+        <li>Scss</li>
+        <li>Github Page</li>
       </>
-    ),
+    )
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({image, git, mobile, short_intro, link, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
+    <>
+      <section className={styles.mobile}>
+        <div className={styles.mobile_image}>
+          <a href={link} target="_blank">
+            <img src={image} alt="" />
+          </a>
+          {/* <Svg className={styles.featureSvg} role="img" /> */}
+        </div>
+        <div className={styles.mobile_box}>
+          <a href={git} target="_blank">
+            <h3>{title}</h3>
+          </a>
+          <p>{short_intro}</p>
+        </div>
+      </section>
+      <section className={styles.desktop}>
+        <div className={styles.desktop_image}>
+          <a href={link} target="_blank">
+            <img src={image} alt="" />
+          </a>
+          <a href={link} target="_blank">
+            <img src={mobile} alt="" />
+          </a>
+        </div>
+        <div className={styles.desktop_desc_box}>
+          <h3 className={styles.desktop_desc_title}>{title}</h3>
+          <div className={styles.desktop_desc}>{description}</div>
+          <div className={styles.desktop_btn}>
+            <a href={git} target="_blank" className={styles.desktop_btn_text}>More</a>
+          </div>
+        </div>
+        <button className={styles.prev}>
+          <FaArrowLeft />
+        </button>
+        <button className={styles.next}>
+          <FaArrowRight />
+        </button>
+      </section>
+    </>
   );
 }
 
 export default function HomepageFeatures() {
+  const [featureList, setFeatureList] = useState(data)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const lastIndex = featureList.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, featureList]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3500);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
+
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <section className={styles.features}>
+          {featureList.map((lists, idx) => {
+            const { id, image, git, mobile, short_intro, link, title, description } = lists
+            let position = 'nextSlide'
+            if (idx === index) {
+              position = 'activeSlide'
+            }
+            if (
+              idx === index -1 ||
+              (index === 0 && idx === featureList.length - 1)
+            ) {
+              position = 'lastSlide'
+            }
+
+            return (
+              <article className={position} key={id}>
+                <section className={styles.mobile}>
+                  <div className={styles.mobile_image}>
+                    <a href={link} target="_blank">
+                      <img src={image} alt="" />
+                    </a>
+                    {/* <Svg className={styles.featureSvg} role="img" /> */}
+                  </div>
+                  <div className="text--center padding-horiz--md">
+                    <a href={git} target="_blank">
+                      <h3>{title}</h3>
+                    </a>
+                    <p>{short_intro}</p>
+                  </div>
+                </section>
+                <section className={styles.desktop}>
+                  <div className={styles.desktop_image}>
+                    <a href={link} target="_blank">
+                      <img src={image} alt="" />
+                    </a>
+                    <a href={link} target="_blank" className={styles.desktop_image_02}>
+                      <img src={mobile} alt="" />
+                    </a>
+                  </div>
+                  <div className={styles.desktop_desc_box}>
+                    <h3 className={styles.desktop_desc_title}>{title}</h3>
+                    <div className={styles.desktop_desc}>{description}</div>
+                    <div className={styles.desktop_btn}>
+                      <a href={git} target="_blank" className={styles.desktop_btn_text}>More</a>
+                    </div>
+                  </div>
+                </section>
+              </article>
+            )
+          })}
+          <button className={styles.prev} onClick={() => setIndex(index - 1)}>
+            <FaArrowLeft />
+          </button>
+          <button className={styles.next} onClick={() => setIndex(index + 1)}>
+            <FaArrowRight />
+          </button>
+      </section>
+    </>
   );
 }
