@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clsx from 'clsx';
 import styles from './styles.module.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
@@ -103,7 +102,6 @@ export default function HomepageFeatures() {
                     <a href={link} target="_blank">
                       <img src={image} alt="" />
                     </a>
-                    {/* <Svg className={styles.featureSvg} role="img" /> */}
                   </div>
                   <div className="text--center padding-horiz--md">
                     <a href={git} target="_blank">
