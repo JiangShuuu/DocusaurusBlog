@@ -29,6 +29,9 @@
   overflow: hidden;
   margin: 0 0 0 3rem;
 }
+.desktop_image_02 {
+  padding-left: 1rem;
+}
 .desktop_desc {
   display: flex;
   flex-direction: column;

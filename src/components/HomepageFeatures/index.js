@@ -149,7 +149,7 @@ export default function HomepageFeatures() {
                     <a href={link} target="_blank">
                       <img src={image} alt="" />
                     </a>
-                    <a href={link} target="_blank">
+                    <a href={link} target="_blank" className={styles.desktop_image_02}>
                       <img src={mobile} alt="" />
                     </a>
                   </div>
