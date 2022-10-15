@@ -1,5 +1,5 @@
 ---
-id: vue-router-link
+id: vue-router-link-useful
 sidebar_position: 4
 last_update:
   date: 2022/10/08
@@ -52,7 +52,7 @@ description: 記錄 Vue-router 好用的功能
 將剛剛建立好的layout用componet載入
 
 ```jsx
-// main.js
+// main.ts
 
 // ...
 import DefaultLayout from './layouts/default.vue'
