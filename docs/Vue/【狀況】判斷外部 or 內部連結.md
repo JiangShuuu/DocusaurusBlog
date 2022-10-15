@@ -1,5 +1,5 @@
 ---
-id: vue-router-link
+id: vue-router-link-useful
 sidebar_position: 1
 last_update:
   date: 2022/07/24
