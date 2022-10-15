@@ -7,39 +7,49 @@ const data = [
   {
     id: 1,
     title: '全端電商',
-    image: './profile/01.png',
-    mobile: './profile/02.png',
+    image: './profile/01/web.png',
+    mobile: './profile/01/mobile.png',
     link: 'https://profile.jiangshuuu.com/',
     git: 'https://github.com/JiangShuuu/vue3-clothingStore-ts',
     short_intro: 'NodeJS / TypeScript(Vue3) / MySQL / Oracle',
     description: (
       <>
-        <li>Vue3 + TypeScript</li>
+        <li>Vue3 + TypeScript + Restful API</li>
         <li>TailwindCss(前台) + Element-Plus(後台) </li>
         <li>Nodejs + express + MySQL</li>
         <li>Oracle + Docker + GitHubAction</li>
+        <li>Rendertron for SEO</li>
       </>
     )
   },
   {
     id: 2,
-    title: '旅遊查詢',
-    image: './profile/01.png',
-    mobile: './profile/02.png',
+    title: '旅遊查詢(前端)',
+    image: './profile/02/web.jpg',
+    mobile: './profile/02/mobile.jpg',
+    link: 'https://jiangshuuu.github.io/travel_website/',
+    git: 'https://github.com/JiangShuuu/travel_website',
+    short_intro: 'Vue2 / 交通部API / Scss',
     description: (
       <>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sit accusantium, possimus corrupti nam ratione doloribus deserunt cumque quidem id reiciendis ut quisquam mollitia neque tempora perspiciatis? Cumque, hic quae.
+        <li>For The F2E 活動</li>
+        <li>Vue2 + 交通部API</li>
+        <li>Scss</li>
+        <li>Github Page</li>
       </>
     )
   },
   {
     id: 3,
-    title: '旅遊查詢3',
-    image: './profile/01.png',
-    mobile: './profile/02.png',
+    title: 'Twitter 前後協作專案',
+    image: './profile/03/DemoGif.gif',
+    // mobile: './profile/03/demo.jpg',
+    short_intro: 'Vue2 / Restful API / Scss',
     description: (
       <>
-        dsadsaLorem ipsum dolor sit amet consectetur adipisicing elit. Provident sit accusantium, possimus corrupti nam ratione doloribus deserunt cumque quidem id reiciendis ut quisquam mollitia neque tempora perspiciatis? Cumque, hic quae.
+        <li>Vue2 + Restful API</li>
+        <li>Scss</li>
+        <li>Github Page</li>
       </>
     )
   },
@@ -103,14 +113,14 @@ export default function HomepageFeatures() {
     }
   }, [index, featureList]);
 
-  // useEffect(() => {
-  //   let slider = setInterval(() => {
-  //     setIndex(index + 1);
-  //   }, 3500);
-  //   return () => {
-  //     clearInterval(slider);
-  //   };
-  // }, [index]);
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3500);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
 
   return (
     <>

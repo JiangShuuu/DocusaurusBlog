@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin-top: -1.5rem;
 }
 .desktop_desc_title {
   text-align: center;

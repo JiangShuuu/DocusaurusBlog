@@ -14,7 +14,7 @@ function HomepageHeader() {
       <section className={styles.person_box}>
         <img src='/img/photo.jpeg' className={styles.person_img} />
         <p className={styles.title}>John Lu</p>
-        <p className={styles.text}>技術分享, 持續學習, 筆記記錄, 全端開發</p>
+        <p className={styles.text}>Everything is Figureoutable</p>
         {/* <Link
           className="button button--secondary button--lg"
           to="/cv">
