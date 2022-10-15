@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const FeatureList = [
+const data = [
   {
+    id: 1,
     title: '全端電商',
     image: './profile/01.png',
     mobile: './profile/02.png',
@@ -20,15 +21,28 @@ const FeatureList = [
       </>
     )
   },
-  // {
-  //   title: '旅遊查詢',
-  //   image: './profile/01.jpeg',
-  //   description: (
-  //     <>
-  //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sit accusantium, possimus corrupti nam ratione doloribus deserunt cumque quidem id reiciendis ut quisquam mollitia neque tempora perspiciatis? Cumque, hic quae.
-  //     </>
-  //   )
-  // },
+  {
+    id: 2,
+    title: '旅遊查詢',
+    image: './profile/01.png',
+    mobile: './profile/02.png',
+    description: (
+      <>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sit accusantium, possimus corrupti nam ratione doloribus deserunt cumque quidem id reiciendis ut quisquam mollitia neque tempora perspiciatis? Cumque, hic quae.
+      </>
+    )
+  },
+  {
+    id: 3,
+    title: '旅遊查詢3',
+    image: './profile/01.png',
+    mobile: './profile/02.png',
+    description: (
+      <>
+        dsadsaLorem ipsum dolor sit amet consectetur adipisicing elit. Provident sit accusantium, possimus corrupti nam ratione doloribus deserunt cumque quidem id reiciendis ut quisquam mollitia neque tempora perspiciatis? Cumque, hic quae.
+      </>
+    )
+  },
 ];
 
 function Feature({image, git, mobile, short_intro, link, title, description}) {
@@ -76,13 +90,72 @@ function Feature({image, git, mobile, short_intro, link, title, description}) {
 }
 
 export default function HomepageFeatures() {
+  const [featureList, setFeatureList] = useState(data)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const lastIndex = featureList.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, featureList]);
+
+  // useEffect(() => {
+  //   let slider = setInterval(() => {
+  //     setIndex(index + 1);
+  //   }, 5000);
+  //   return () => {
+  //     clearInterval(slider);
+  //   };
+  // }, [index]);
+
   return (
     <>
-      {/* <h1 className={styles.title_h1}>Recent Project</h1> */}
       <section className={styles.features}>
-        {FeatureList.map((props, idx) => (
-          <Feature key={idx} {...props} />
-        ))}
+          {featureList.map((lists, idx) => {
+            const { id, image, git, mobile, short_intro, link, title, description } = lists
+            let position = 'nextSlide'
+            if (idx === index) {
+              position = 'activeSlide'
+            }
+            if (
+              idx === index -1 ||
+              (index === 0 && idx === featureList.length - 1)
+            ) {
+              position = 'lastSlide'
+            }
+
+            return (
+              <article className={position} key={id}>
+                <section className={styles.desktop}>
+                  <div className={styles.desktop_image}>
+                    <a href={link} target="_blank">
+                      <img src={image} alt="" />
+                    </a>
+                    <a href={link} target="_blank">
+                      <img src={mobile} alt="" />
+                    </a>
+                  </div>
+                  <div className={styles.desktop_desc_box}>
+                    <h3 className={styles.desktop_desc_title}>{title}</h3>
+                    <div className={styles.desktop_desc}>{description}</div>
+                    <div className={styles.desktop_btn}>
+                      <a href={git} target="_blank" className={styles.desktop_btn_text}>More</a>
+                    </div>
+                  </div>
+                </section>
+              </article>
+            )
+          })}
+          <button className={styles.prev} onClick={() => setIndex(index - 1)}>
+            <FaArrowLeft />
+          </button>
+          <button className={styles.next} onClick={() => setIndex(index + 1)}>
+            <FaArrowRight />
+          </button>
       </section>
     </>
   );

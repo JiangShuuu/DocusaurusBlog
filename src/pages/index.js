@@ -11,7 +11,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={styles.person_header}>
-      <article className={styles.person_box}>
+      <section className={styles.person_box}>
         <img src='/img/photo.jpeg' className={styles.person_img} />
         <p className={styles.title}>John Lu</p>
         <p className={styles.text}>技術分享, 持續學習, 筆記記錄, 全端開發</p>
@@ -20,7 +20,7 @@ function HomepageHeader() {
           to="/cv">
           More Info
         </Link> */}
-      </article>
+      </section>
     </header>
   );
 }

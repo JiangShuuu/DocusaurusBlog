@@ -1,9 +1,19 @@
 .features {
+  /* position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
   margin: 0 2rem;
+  height: 20rem; */
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
 }
 
 .title_h1 {
@@ -31,6 +41,7 @@
 .desktop_desc {
   display: flex;
   flex-direction: column;
+  align-items: start;
 }
 .desktop_desc_title {
   text-align: center;
@@ -71,7 +82,7 @@
 .next {
   position: absolute;
   top: 50%;
-  margin: 0 -1.5rem;
+  margin: 0 5rem;
   transform: translateY(-50%);
   width: 2rem;
   height: 2rem;

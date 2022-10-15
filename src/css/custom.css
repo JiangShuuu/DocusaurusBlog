@@ -28,3 +28,26 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* article */
+article {
+  position: absolute;
+  border: 1px solid;
+  /* top: 10%;
+  left: 10%; */
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: .2s;
+}
+article.activeSlide {
+  opacity: 1;
+  /* border: 1px solid; */
+  transform: translateX(0);
+}
+article.lastSlide {
+  transform: translateX(-100%);
+}
+article.nextSlide {
+  transform: translateX(100%);
+}
