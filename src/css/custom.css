@@ -29,11 +29,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.main {
-  overflow: hidden;
-  border: 1px solid red;
-}
-
 /* article */
 .article {
   position: absolute;
