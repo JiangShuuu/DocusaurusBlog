@@ -44,6 +44,8 @@ const data = [
     title: 'Twitter 前後協作專案',
     image: './profile/03/DemoGif.gif',
     // mobile: './profile/03/demo.jpg',
+    link: 'https://jiangshuuu.github.io/twitter_project/',
+    git: 'https://github.com/JiangShuuu/twitter_project',
     short_intro: 'Vue2 / Restful API / Scss',
     description: (
       <>
