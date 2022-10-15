@@ -57,50 +57,6 @@ const data = [
   },
 ];
 
-function Feature({image, git, mobile, short_intro, link, title, description}) {
-  return (
-    <>
-      <section className={styles.mobile}>
-        <div className={styles.mobile_image}>
-          <a href={link} target="_blank">
-            <img src={image} alt="" />
-          </a>
-          {/* <Svg className={styles.featureSvg} role="img" /> */}
-        </div>
-        <div className={styles.mobile_box}>
-          <a href={git} target="_blank">
-            <h3>{title}</h3>
-          </a>
-          <p>{short_intro}</p>
-        </div>
-      </section>
-      <section className={styles.desktop}>
-        <div className={styles.desktop_image}>
-          <a href={link} target="_blank">
-            <img src={image} alt="" />
-          </a>
-          <a href={link} target="_blank">
-            <img src={mobile} alt="" />
-          </a>
-        </div>
-        <div className={styles.desktop_desc_box}>
-          <h3 className={styles.desktop_desc_title}>{title}</h3>
-          <div className={styles.desktop_desc}>{description}</div>
-          <div className={styles.desktop_btn}>
-            <a href={git} target="_blank" className={styles.desktop_btn_text}>More</a>
-          </div>
-        </div>
-        <button className={styles.prev}>
-          <FaArrowLeft />
-        </button>
-        <button className={styles.next}>
-          <FaArrowRight />
-        </button>
-      </section>
-    </>
-  );
-}
-
 export default function HomepageFeatures() {
   const [featureList, setFeatureList] = useState(data)
   const [index, setIndex] = useState(0)
@@ -141,7 +97,7 @@ export default function HomepageFeatures() {
             }
 
             return (
-              <article className={position} key={id}>
+              <section className={`article ${position}`} key={id}>
                 <section className={styles.mobile}>
                   <div className={styles.mobile_image}>
                     <a href={link} target="_blank">
@@ -173,7 +129,7 @@ export default function HomepageFeatures() {
                     </div>
                   </div>
                 </section>
-              </article>
+              </section>
             )
           })}
           <button className={styles.prev} onClick={() => setIndex(index - 1)}>

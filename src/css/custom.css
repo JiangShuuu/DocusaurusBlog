@@ -30,7 +30,7 @@
 }
 
 /* article */
-article {
+.article {
   position: absolute;
   display: flex;
   align-items: center;
@@ -40,13 +40,13 @@ article {
   opacity: 1;
   transition: .2s;
 }
-article.activeSlide {
+.article.activeSlide {
   opacity: 1;
   transform: translateX(0);
 }
-article.lastSlide {
+.article.lastSlide {
   transform: translateX(-100%);
 }
-article.nextSlide {
+.article.nextSlide {
   transform: translateX(100%);
 }
