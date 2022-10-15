@@ -39,7 +39,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: .3s;
+  transition: .9s;
 }
 .article.activeSlide {
   opacity: 1;

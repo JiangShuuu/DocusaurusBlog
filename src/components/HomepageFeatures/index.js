@@ -73,7 +73,7 @@ export default function HomepageFeatures() {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 3500);
+    }, 3600);
     return () => {
       clearInterval(slider);
     };
