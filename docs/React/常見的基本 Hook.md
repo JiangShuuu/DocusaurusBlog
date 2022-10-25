@@ -97,6 +97,10 @@ export default function App() {
 
 ### 依賴項
 
+- 不加 [] 會在 componentDidMount、componentDidUpdate(props, state 等變化)時執行
+- 加 [] 只在componentDidMount執行
+- 加特定值[] 會在 componentDidMount、特定值改變時執行
+
 useEffect第二層可以監控value的變化去觸發事件, 而監控的是value的內存位置,
 
 以物件來說, 只改變第二層會使得 useEffect 沒辦法觸發, 因爲內存位置是一樣的,
