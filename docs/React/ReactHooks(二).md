@@ -6,7 +6,7 @@ last_update:
   author: JohnShuuu
 tags: [react, hook]
 title: ReactHooks (二)
-description: React Hooks 學習筆記, 用範例快速記憶, React.memo, useMemo, useCallback
+description: React Hooks 學習筆記, 用範例快速理解, React.memo, useMemo, useCallback
 ---
 # ReactHooks (二)
 在某些情況下, 當父層重新render時, 即使子層的 props或者state 沒有任何變化也會跟著 reRender, 為了避免此情況發生,

@@ -6,7 +6,7 @@ last_update:
   author: JohnShuuu
 tags: [react, hook]
 title: ReactHooks (一)
-description: React Hooks 學習筆記, 用範例快速記憶, useState, useEffect, useRef, React.forwardRef, useImperativeHandle
+description: React Hooks 學習筆記, 用範例快速理解, useState, useEffect, useRef, React.forwardRef, useImperativeHandle
 ---
 # ReactHooks (一)
 Hook 是從 React 16.8 開始新增的功能,  
