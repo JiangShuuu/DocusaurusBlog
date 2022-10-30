@@ -5,10 +5,10 @@ last_update:
   date: 2022/10/22
   author: JohnShuuu
 tags: [react, hook]
-title: 那些常見的Hook(基本)
-description: React Hook 學習筆記, 用範例快速記憶
+title: ReactHooks (一)
+description: React Hooks 學習筆記, 用範例快速記憶, useState, useEffect, useRef, React.forwardRef, useImperativeHandle
 ---
-# 那些常見的Hook(基本)
+# ReactHooks (一)
 Hook 是從 React 16.8 開始新增的功能,  
 
 最大的特點就是不用寫 class 就能使用 state 以及其他 React 的功能,  
