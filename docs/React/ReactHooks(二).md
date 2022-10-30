@@ -2,7 +2,7 @@
 id: react-hook-02
 sidebar_position: 1
 last_update:
-  date: 2022/10/22
+  date: 2022/10/30
   author: JohnShuuu
 tags: [react, hook]
 title: ReactHooks (二)
