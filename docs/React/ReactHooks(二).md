@@ -1,6 +1,6 @@
 ---
 id: react-hook-02
-sidebar_position: 1
+sidebar_position: 2
 last_update:
   date: 2022/10/30
   author: JohnShuuu
