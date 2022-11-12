@@ -400,3 +400,7 @@ export default function ZustandPage() {
 而使用 zustand 這類原本就爲了 StateManager 設計的第三方套件, 就不用擔心 reRender 問題, 因為他們的設計邏輯並不像 useContext是父層向下的多層傳遞
 
 所以要做 StateManager 的話還是使用 zustand 這類的第三方套件最為省心
+
+## 範例連結
+
+[https://github.com/JiangShuuu/blog-post-example/tree/main/StateManager/src](https://github.com/JiangShuuu/blog-post-example/tree/main/StateManager/src)
