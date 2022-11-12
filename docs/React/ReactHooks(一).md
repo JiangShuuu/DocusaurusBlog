@@ -20,7 +20,7 @@ Hook 是從 React 16.8 開始新增的功能,
 ### 定義
 
 - 用於宣告變數
-- 相當於 class constructor 裡的 this.state
+- 類似於 class constructor 裡的 this.state
 - 不要直接改變 state 的值, 使用 set() 去改變 state的值
 
 ### 範例
@@ -50,7 +50,7 @@ function Example() {
 ### 定義
 
 - 用於組件三個階段的監控, '創建', '更新', '摧毀'
-- 相當於 componentDidMount，componentDidUpdate 和 componentWillUnmount 的組合
+- 類似於 componentDidMount，componentDidUpdate 和 componentWillUnmount 的組合
 
 ### 範例
 
