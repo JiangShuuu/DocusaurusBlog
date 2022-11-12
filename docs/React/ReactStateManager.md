@@ -395,7 +395,7 @@ export default function ZustandPage() {
 
 ## 總結
 
-雖然用 useContext + useReducer 可以在使用原生 React 的情況下做到 StateManager, 但由於 useContext 的初衷是 props 多層向下傳遞, 所以真的要拿來做 StateManager 的話就必須顧慮到 state 改變造成組件的 reRender, state 可以用 useContextSelector來避免, function 可以用 useCallback 來避免
+雖然用 useContext + useReducer 可以在使用原生 React 的情況下做到 StateManager, 但由於 useContext 的初衷是解決 props 多層向下傳遞, 所以真的要拿來做 StateManager 的話就必須顧慮到 state 改變造成組件的 reRender, state 可以用 useContextSelector來避免, function 可以用 useCallback 來避免
 
 而使用 zustand 這類原本就爲了 StateManager 設計的第三方套件, 就不用擔心 reRender 問題, 因為他們的設計邏輯並不像 useContext是父層向下的多層傳遞
 
