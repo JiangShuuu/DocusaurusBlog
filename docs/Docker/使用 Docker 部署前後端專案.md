@@ -1,6 +1,6 @@
 ---
 id: docker-deploy-frontend-backend
-sidebar_position: 3
+sidebar_position: 4
 last_update:
   date: 2022/09/18
   author: JohnShuuu
