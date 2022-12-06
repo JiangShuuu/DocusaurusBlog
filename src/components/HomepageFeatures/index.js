@@ -5,6 +5,24 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const data = [
   {
     id: 1,
+    title: '簡易視訊聊天室',
+    image: './profile/04/01.png',
+    mobile: './profile/04/02.jpg',
+    link: 'https://profile1.jiangshuuu.com/',
+    git: 'https://github.com/JiangShuuu/socket-chat',
+    short_intro: 'React / express / MongoDB / Socket.io / Oracle',
+    description: (
+      <>
+        <li>React</li>
+        <li>Styled-Component</li>
+        <li>Socket.io + Peer.js</li>
+        <li>Nodejs + express + MongoDB</li>
+        <li>Oracle + Docker + GitHubAction</li>
+      </>
+    )
+  },
+  {
+    id: 2,
     title: '全端電商',
     image: './profile/01/web.png',
     mobile: './profile/01/mobile.png',
@@ -22,7 +40,7 @@ const data = [
     )
   },
   {
-    id: 2,
+    id: 3,
     title: '旅遊查詢(前端)',
     image: './profile/02/web.jpg',
     mobile: './profile/02/mobile.jpg',
@@ -39,7 +57,7 @@ const data = [
     )
   },
   {
-    id: 3,
+    id: 4,
     title: 'Twitter 前後協作專案',
     image: './profile/03/DemoGif.gif',
     // mobile: './profile/03/demo.jpg',
