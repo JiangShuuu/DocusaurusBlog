@@ -413,9 +413,9 @@ fallback模式分為三種
 
 ### fallback：false
 
-- 找不到指定id則導向404
+- 若 browser 輸入的 id 並不在 getStaticPaths的retun props的話, 直接導向404
 
-已下方為例, 若 getStaticPaths 傳出的 params id 只有 1~3, 那使用者輸入 4 時, 則直接導向 404
+已下方為例, getStaticPaths 傳出的 params id 只有 1~3, 那使用者輸入 4 時, 則直接導向 404
 
 ```jsx
 export const getStaticPaths = () => {
@@ -434,11 +434,11 @@ export const getStaticPaths = () => {
 
 ### fallback：true
 
-- 直接往下執行, 有 router.isFallback 可使用, 404要另外設定找不到id return notFound
+- 不管有沒有在 getStaticPaths 名單內, 都直接往下執行, 有 router.isFallback 可使用, 404要另外設定找不到id return notFound
 
 已下方為例, 若 getStaticPaths 傳出的 params id 一開始只有 1~3, 在使用者輸入 4 時, 會直接往下執行去抓取 id 4 的資料
 
-由於是直接往下執行, 需做一層 id 判斷才不會報錯
+***由於是直接往下執行, 需做一層 id 判斷才不會報錯***
 
 ```jsx
 export const getStaticPaths = () => {
@@ -505,7 +505,7 @@ export default function Home({ data }: any) {
 
 ### fallback：blocking
 
-- 跟true一樣往下執行, 但沒有 router.isFallback 使用, 404要另外設定找不到id return notFound
+- 跟true一樣往下執行, 但沒有 router.isFallback 使用, 404一樣要另外設定找不到id return notFound
 
 ```jsx
 export const getStaticPaths = () => {
