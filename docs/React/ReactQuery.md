@@ -5,7 +5,7 @@ last_update:
   date: 2022/02/26
   author: JohnShuuu
 tags: [react, react-query]
-title: ReactQuery
+title: 【套件】ReactQuery
 description: React 學習筆記, 用範例快速理解, ReactQuery
 ---
 # ReactQuery 使用
