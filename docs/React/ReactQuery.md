@@ -9,7 +9,7 @@ title: 【套件】ReactQuery
 description: React 學習筆記, 用範例快速理解, ReactQuery
 ---
 # ReactQuery 使用
-React 前端快取工具, 提供簡易方法將api的資料做快取, 防止api短時間內重複被call, 並且可以設定時間或條件自動重打 api, 確保資料更新
+React 前端快取工具, 提供簡易方法將 api 的資料做快取, 防止api短時間內重複被call, 並且可以設定時間或條件自動重打 api, 確保資料更新
 ## 基礎使用
 
 ### 建置
